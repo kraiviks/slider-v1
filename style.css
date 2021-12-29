@@ -35,10 +35,13 @@ body{
 
 .slide__title{
 	position: absolute;
+	left: -100%;
 	font-size: 2rem;
 	color: white;
 	padding: 10px 30px;
 	box-shadow: 5px 10px 10px black;
+	animation: titleAnim;
+	animation-duration: 5s;
 }
 
 .control-box{
@@ -74,4 +77,16 @@ body{
 	100% {
 		opacity: 1;
 	}
+}
+
+@keyframes titleAnim {
+	from{
+		opacity: 0;
+		left: -10%;
+	}
+	to{
+		opacity: 1;
+		left: 0%;
+	}
+	
 }
