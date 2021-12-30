@@ -1,10 +1,11 @@
-*{
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-body{
+body {
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,14 +14,22 @@ body{
 	padding: 50px;
 }
 
-
-
-.slider{
+.slider {
 	width: 700px;
 	height: 550px;
 }
 
-.slide{
+@media only screen and (max-width: 600px) {
+	.slider {
+		width: 300px;
+		height: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.slide {
 	width: inherit;
 	display: flex;
 	box-shadow: 0 0 10px black;
@@ -29,11 +38,11 @@ body{
 	position: relative;
 }
 
-.slide img{
+.slide img {
 	width: inherit;
 }
 
-.slide__title{
+.slide__title {
 	position: absolute;
 	left: -100%;
 	font-size: 2rem;
@@ -44,26 +53,27 @@ body{
 	animation-duration: 5s;
 }
 
-.control-box{
-	display: flex;	
+.control-box {
+	display: flex;
 }
 
-.prev, .next{
+.prev,
+.next {
 	color: white;
 	font-size: 50px;
 	text-transform: uppercase;
 	margin: 0 10px;
 	cursor: pointer;
 	user-select: none;
-	transition: .5s;
+	transition: 0.5s;
 }
 
-.prev:hover{
+.prev:hover {
 	transform: scale(1.2);
 	color: black;
 	text-shadow: 0 0 10px white;
 }
-.next:hover{
+.next:hover {
 	transform: scale(1.2);
 	color: black;
 	text-shadow: 0 0 5px white;
@@ -80,13 +90,12 @@ body{
 }
 
 @keyframes titleAnim {
-	from{
+	from {
 		opacity: 0;
 		left: -10%;
 	}
-	to{
+	to {
 		opacity: 1;
 		left: 0%;
 	}
-	
 }
